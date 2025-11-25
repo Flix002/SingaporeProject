@@ -1,0 +1,43 @@
+/* Minimal futuristic accents: neon glows and glass panels */
+.neon-glow {
+  box-shadow: 0 4px 30px rgba(0,255,255,0.07), 0 0 12px rgba(0,200,255,0.12);
+}
+.glass {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(6px) saturate(120%);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.neon-accent {
+  color: #00f0ff;
+  text-shadow: 0 0 6px rgba(0,240,255,0.4);
+}
+
+/* small rounded gradient buttons */
+.btn-neon { background: linear-gradient(90deg,#0ea5e9,#a78bfa); box-shadow: 0 6px 18px rgba(167,139,250,0.12); color: white; }
+
+/* Improved card */
+.card-futuristic {
+  padding: 1rem;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(0,255,255,0.06);
+  box-shadow: 0 6px 20px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+}
+
+.card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #e6faff;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.35);
+}
+
+.btn-neon:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(167,139,250,0.18); }
+
+.muted { color: rgba(255,255,255,0.6); }
+
+.accent { color: #7ef3ff; }
+
+.small { font-size: 0.85rem; }
+
+.rounded-image { border-radius: 8px; overflow: hidden; }

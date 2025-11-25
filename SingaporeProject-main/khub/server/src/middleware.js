@@ -1,0 +1,44 @@
+import jwt from 'jsonwebtoken';
+import { User } from './models.js';
+
+export async function authenticateToken(req, res, next) {
+  try {
+    const authHeader = req.headers.authorization;
+    let token = authHeader && authHeader.split(' ')[1];
+
+    // If no Authorization header, try cookie (httpOnly)
+    if (!token && req.cookies && req.cookies.token) {
+      token = req.cookies.token;
+    }
+
+    if (!token) {
+      return res.status(401).json({ message: 'Access token is required' });
+    }
+
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const user = await User.findById(decoded.userId).select('-password');
+
+    if (!user) {
+      return res.status(401).json({ message: 'User not found' });
+    }
+
+    req.user = user;
+    next();
+  } catch (error) {
+    return res.status(401).json({ message: 'Invalid token' });
+  }
+}
+
+export function checkRole(roles) {
+  return (req, res, next) => {
+    if (!req.user) {
+      return res.status(401).json({ message: 'Not authenticated' });
+    }
+
+    if (!roles.includes(req.user.role)) {
+      return res.status(403).json({ message: 'Permission denied' });
+    }
+
+    next();
+  };
+}

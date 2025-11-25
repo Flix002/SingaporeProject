@@ -1,0 +1,10 @@
+[
+  {
+    "id": "n1",
+    "type": "meeting",
+    "from": "user1@gmail.com",
+    "message": "Request private meeting with Teacher A",
+    "createdAt": "2025-10-23T08:22:54.349Z",
+    "handled": false
+  }
+]

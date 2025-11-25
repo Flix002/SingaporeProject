@@ -1,0 +1,22 @@
+[
+  {
+    "id": "s1761209579772",
+    "courseId": "c1761209537638",
+    "userEmail": "user.example@gmail.com",
+    "paymentPlan": "two",
+    "payments": [
+      {
+        "amount": "half",
+        "paid": true,
+        "at": "2025-10-23T08:52:59.772Z"
+      },
+      {
+        "amount": "half",
+        "paid": true,
+        "at": "2025-10-23T08:54:07.458Z"
+      }
+    ],
+    "active": true,
+    "createdAt": "2025-10-23T08:52:59.772Z"
+  }
+]

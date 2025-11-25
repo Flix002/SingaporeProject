@@ -1,0 +1,38 @@
+[
+  {
+    "id": "c1761209537638",
+    "title": "E2E Course",
+    "price": 25,
+    "description": "Created via E2E test",
+    "author": "admin.example@gmail.com",
+    "parts": 4,
+    "createdAt": "2025-10-23T08:52:17.638Z"
+  },
+  {
+    "id": "c1761209510672",
+    "title": "E2E Course",
+    "price": 25,
+    "description": "Created via E2E test",
+    "author": "admin.example@gmail.com",
+    "parts": 4,
+    "createdAt": "2025-10-23T08:51:50.672Z"
+  },
+  {
+    "id": "c1",
+    "title": "Intro to Singapore",
+    "price": 0,
+    "author": "admin.example@gmail.com",
+    "parts": 4,
+    "description": "Free intro",
+    "createdAt": "2025-10-23T08:22:54.341Z"
+  },
+  {
+    "id": "c2",
+    "title": "Advanced Governance",
+    "price": 100,
+    "author": "teacher.example@gmail.com",
+    "parts": 8,
+    "description": "Premium course",
+    "createdAt": "2025-10-23T08:22:54.341Z"
+  }
+]

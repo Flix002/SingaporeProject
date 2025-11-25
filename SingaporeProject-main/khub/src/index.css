@@ -1,0 +1,12 @@
+/* Tailwind entry CSS - do not remove */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* small app defaults to play nicely with futuristic styles */
+html, body, #root {
+	height: 100%;
+}
+body {
+	@apply bg-[#071025] text-white font-sans;
+}

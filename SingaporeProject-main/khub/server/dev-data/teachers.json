@@ -1,0 +1,9 @@
+[
+  {
+    "id": "t1",
+    "name": "Teacher A",
+    "email": "teacher.a@gmail.com",
+    "permitted": true,
+    "createdAt": "2025-10-23T08:22:54.358Z"
+  }
+]
