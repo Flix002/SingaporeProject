@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Configuration
-CPANEL_USERNAME="your_cpanel_username"
-CPANEL_HOST="your_domain.z.com"
+CPANEL_USERNAME="zqdtpszw"
+CPANEL_HOST="knowledgehubmm.com"
 REMOTE_DIR="public_html"  # or your specific subdirectory
 
 # Build the React application

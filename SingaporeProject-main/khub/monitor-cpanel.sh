@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Configuration
-CPANEL_USERNAME="your_cpanel_username"
-CPANEL_HOST="your_domain.z.com"
-SITE_URL="https://your-domain.z.com"
+CPANEL_USERNAME="zqdtpszw"
+CPANEL_HOST="knowledgehubmm.com"
+SITE_URL="https://knowledgehubmm.com"
 
 # Colors for output
 RED='\033[0;31m'
