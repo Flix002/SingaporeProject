@@ -18,6 +18,22 @@ export async function signIn(email, password) {
   return res.json();
 }
 
+export async function signUp({ username, email, password, role = 'user', clientHashed = false }) {
+  const res = await fetch(`${API_URL}/signup`, {
+    method: 'POST',
+    credentials: 'include',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ username, email, password, role, clientHashed })
+  });
+
+  if (!res.ok) {
+    const error = await res.json().catch(() => ({ message: 'Sign up failed' }));
+    throw new Error(error.message || 'Sign up failed');
+  }
+
+  return res.json();
+}
+
 export async function validateToken() {
   const res = await fetch(`${API_URL}/validate`, {
     method: 'POST',

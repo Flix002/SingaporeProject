@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Configuration
-CPANEL_USERNAME="your_cpanel_username"
-CPANEL_DOMAIN="your_domain.com"
+CPANEL_USERNAME="Admin"
+CPANEL_DOMAIN="knowledgehubmm.com"
 APP_PATH="khub"
 NODE_VERSION="18"
 

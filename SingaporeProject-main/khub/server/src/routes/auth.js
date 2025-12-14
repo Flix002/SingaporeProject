@@ -1,15 +1,27 @@
 import express from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import crypto from 'crypto';
 import { User } from './models.js';
 import { authenticateToken } from './middleware.js';
+
+// SECURITY NOTE:
+// This server supports an optional `clientHashed` signup flow where the
+// client pre-hashes the password (SHA-256) before sending it to the server.
+// When `clientHashed` is true the server stores the received value as the
+// user's password and still runs the Mongoose pre-save hook which applies
+// bcrypt hashing before persisting to the database. This provides defense-in-depth
+// but does NOT replace server-side hashing. Always keep the bcrypt/argon2
+// hashing step server-side and never store client-only hashes without salting
+// and re-hashing on the server. The `clientHashed` flag exists for optional
+// compatibility with client-side hashing components (e.g. `PasswordHasher`).
 
 const router = express.Router();
 
 // Sign up
 router.post('/signup', async (req, res) => {
   try {
-    const { username, email, password, role = 'user' } = req.body;
+    const { username, email, password, role = 'user', clientHashed = false } = req.body;
 
     // Validate Gmail address
     if (!/^[\w-\.]+@gmail\.com$/i.test(email)) {
@@ -22,15 +34,13 @@ router.post('/signup', async (req, res) => {
       return res.status(400).json({ message: 'Email already registered' });
     }
 
-    // Hash password
-    const hashedPassword = await bcrypt.hash(password, 10);
-
-    // Create user
+    // Create user - let model pre-save hook hash the provided password
     const user = await User.create({
       username,
       email: email.toLowerCase(),
-      password: hashedPassword,
-      role
+      password,
+      role,
+      clientHashed: !!clientHashed
     });
 
     // Create token and set httpOnly cookie
@@ -70,8 +80,16 @@ router.post('/signin', async (req, res) => {
       return res.status(401).json({ message: 'Invalid credentials' });
     }
 
-    // Verify password
-    const validPassword = await bcrypt.compare(password, user.password);
+    // If user signed up with client-side hashing, compute SHA-256 of incoming password first
+    let candidate = password;
+    if (user.clientHashed) {
+      // compute sha256 hex
+      const hash = crypto.createHash('sha256').update(String(password)).digest('hex');
+      candidate = hash;
+    }
+
+    // Verify password (bcrypt compare)
+    const validPassword = await bcrypt.compare(candidate, user.password);
     if (!validPassword) {
       return res.status(401).json({ message: 'Invalid credentials' });
     }

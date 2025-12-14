@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Configuration
-CPANEL_USERNAME="zqdtpszw"
+CPANEL_USERNAME="Admin"
 CPANEL_HOST="knowledgehubmm.com"
-REMOTE_DIR="public_html"  # or your specific subdirectory
+REMOTE_DIR="khub"  # deploy into the 'khub' directory on the cPanel account
 
 # Build the React application
 echo "Building React application..."

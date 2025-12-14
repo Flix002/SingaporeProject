@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import bcrypt from 'bcryptjs';
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -18,6 +19,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  clientHashed: {
+    type: Boolean,
+    default: false
+  },
   role: {
     type: String,
     enum: ['admin', 'teacher', 'user'],
@@ -28,6 +33,23 @@ const userSchema = new mongoose.Schema({
     default: Date.now
   }
 });
+
+// Automatically hash password before saving if it was modified
+userSchema.pre('save', async function (next) {
+  try {
+    if (!this.isModified('password')) return next();
+    const salt = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash(this.password, salt);
+    return next();
+  } catch (err) {
+    return next(err);
+  }
+});
+
+// Instance method to compare plaintext password with hashed password
+userSchema.methods.comparePassword = async function (candidatePassword) {
+  return bcrypt.compare(candidatePassword, this.password);
+};
 
 export const User = mongoose.model('User', userSchema);
 

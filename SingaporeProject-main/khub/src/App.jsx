@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 
 import SignIn from "./components/SignIn";
+import FAQ from "./components/FAQ";
+import SignUp from "./components/SignUp";
 
 const BANNER_KEY = 'khub_hide_test_banner_v1';
 
@@ -32,6 +34,11 @@ function App() {
         </div>
       )}
       <SignIn />
+      <SignUp />
+
+      <div className="mt-8">
+        <FAQ />
+      </div>
     </>
   );
 }

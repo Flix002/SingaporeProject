@@ -6,7 +6,7 @@ CPANEL_DOMAIN="your_domain.com"
 LOG_DIR="/home/$CPANEL_USERNAME/logs"
 THRESHOLD_CPU=80
 THRESHOLD_MEMORY=80
-ALERT_EMAIL="your@email.com"
+ALERT_EMAIL="kaungsethmue2001@gmail.com"
 
 # Check Node.js application status
 check_node_app() {
