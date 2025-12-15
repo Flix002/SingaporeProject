@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+* ::-webkit-scrollbar {
+    display: none;
+}
+
+@font-face {
+    font-family: Lexend;
+    src: url(../src/assets/fonts/Lexend-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(../src/assets/fonts/Poppins-Regular.ttf);
+}
+
+@theme {
+    --font-Lexend: Lexend, 'sans-serif';
+    --font-Poppins: Poppins, 'sans-serif';
+}
+
+
+
+@theme {
+    --breakpoint-2xl : 1920px;
+}
+
+.transformYCenter {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.transformXCenter {
+    left:50%;
+    transform: translateX(-50%);
+}
+
+.transformCenter {
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.forInstroctors {
+    background:url(../src/assets/image/Rectangle\ 19.png)
+}
