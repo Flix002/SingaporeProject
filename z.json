@@ -1,0 +1,88 @@
+{
+  "name": "khub",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "build": "npm run build:server && npm run build:client",
+    "build:server": "cd server && npm install",
+    "build:client": "cd khub && npm install && npm run build"
+  },
+  "z": {
+    "type": "web",
+    "environments": {
+      "production": {
+        "memory": 1024,
+        "instances": {
+          "min": 2,
+          "max": 5,
+          "target_cpu_percentage": 70
+        },
+        "env": {
+          "NODE_ENV": "production"
+        },
+        "buildCommand": "npm run build",
+        "startCommand": "npm start",
+        "healthCheck": {
+          "path": "/health",
+          "interval": "30s",
+          "timeout": "5s",
+          "retries": 3
+        },
+        "scaling": {
+          "rules": [
+            {
+              "metric": "cpu",
+              "operator": ">=",
+              "value": 70,
+              "duration": "5m",
+              "action": "scale_up"
+            },
+            {
+              "metric": "memory",
+              "operator": ">=",
+              "value": 80,
+              "duration": "5m",
+              "action": "scale_up"
+            }
+          ]
+        }
+      }
+    },
+    "services": {
+      "mongodb": {
+        "plan": "standard",
+        "backup": {
+          "enabled": true,
+          "schedule": "0 0 * * *",
+          "retention": 7
+        }
+      },
+      "storage": {
+        "plan": "basic",
+        "cors": {
+          "allowed_origins": ["https://khub.z.com"],
+          "allowed_methods": ["GET", "PUT", "POST", "DELETE"],
+          "allowed_headers": ["*"],
+          "max_age": 3600
+        }
+      }
+    },
+    "monitoring": {
+      "alerts": [
+        {
+          "type": "error_rate",
+          "threshold": 5,
+          "window": "5m"
+        },
+        {
+          "type": "latency_p95",
+          "threshold": 1000,
+          "window": "5m"
+        }
+      ]
+    }
+  }
+} 

@@ -1,0 +1,51 @@
+name: Deploy to z.com
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+          
+      - name: Install z.com CLI
+        run: npm install -g @z-com/cli
+        
+      - name: Configure z.com
+        run: z auth login --token ${{ secrets.Z_COM_TOKEN }}
+        
+      - name: Install Backend Dependencies
+        run: |
+          cd server
+          npm install
+          
+      - name: Install Frontend Dependencies
+        run: |
+          cd khub
+          npm install
+          
+      - name: Build Frontend
+        run: |
+          cd khub
+          npm run build
+        env:
+          VITE_API_URL: ${{ secrets.Z_API_URL }}
+          
+      - name: Deploy Backend
+        run: |
+          cd server
+          z deploy
+        env:
+          MONGODB_URI: ${{ secrets.Z_MONGODB_URI }}
+          JWT_SECRET: ${{ secrets.Z_JWT_SECRET }}
+          
+      - name: Deploy Frontend
+        run: |
+          cd khub
+          z deploy --static dist
