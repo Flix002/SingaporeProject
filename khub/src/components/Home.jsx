@@ -1,4 +1,4 @@
-import { ClientNav } from "./ClientNav";
+import { ClientNav } from "./nav/ClientNav";
 import { FaClipboardList } from "react-icons/fa6";
 import { MdOutlineDateRange } from "react-icons/md";
 import { MdGroups } from "react-icons/md";
@@ -14,19 +14,42 @@ import group122 from '../assets/image/Group 122.png'
 import group92 from '../assets/image/Group 92.png'
 import group124 from '../assets/image/Group 124.png'
 import group106 from '../assets/image/Group 106.png'
-import group111 from '../assets/image/Group 111.png'
+import { Footer } from "./Footer";
 
 export const Home = () => {
     return (
         <div className="w-full 2xl:w-[1920px] relative overflow-hidden">
-            <div className="w-full">
-                <ClientNav />
-            </div>
-            {/* Section 1 */}
-            <section className="w-full h-[600px] bg-gray-400">
+            <section className="min-h-screen w-full relative">
+                <div className="min-h-screen w-full bg-[#0f172a] relative">
+                    {/* Blue Radial Glow Background */}
+                    <div
+                        className="absolute inset-0 z-0"
+                        style={{
+                            backgroundImage: `radial-gradient(circle 600px at 50% 50%, rgba(59,130,246,0.3), transparent)`,
+                        }}
+                    />
+                    {/* Your Content/Components */}
+                    <div className="w-full relative">
+                        <ClientNav />
+                        <div className="w-full h-full m-auto flex justify-center items-center px-[30px] mt-[250px] lg:mt-[180px]">
+                            <div>
+                                <h1 className="font-Lexend font-bold text-[40px] text-gray-200 lg:text-[50px] tracking-[2px] text-center">Course Anytime, Any Where</h1>
+                                <div className="flex gap-x-[20px] lg:gap-x-[40px] items-center m-auto justify-center mt-[50px]">
+                                    <div className="lg:w-[200px] lg:h-[60px] w-[150px] h-[50px] text-[15px] lg:text-[20px] rounded-[20px] bg-black text-white hover:bg-gray-500 transition-all rounded-[40px] flex justify-center items-center cursor-pointer active:bg-red-500">
+                                        <h1 className="font-Lexend select-none">Find Courses</h1>
+                                    </div>
+                                    <div className="lg:w-[200px] lg:h-[60px] w-[150px] h-[50px] text-[15px] lg:text-[20px] rounded-[20px] bg-gray-500 hover:bg-gray-500 hover:text-white transition-all rounded-[40px] flex justify-center items-center cursor-pointer active:bg-red-500">
+                                        <h1 className="font-Lexend select-none">Learn More</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 
             </section>
-            <div className="w-full h-auto lg:h-[130px] bg-gray-500 px-[10px] lg:px-[20px]">
+            <div className="w-full h-auto lg:h-[130px] px-[10px] lg:px-[20px]">
                 <div className="w-full h-full flex lg:flex-row justify-between px-[20px] lg:justify-center items-start gap-x-[10px] lg:gap-x-[90px]">
                     <div className="w-auto">
                         <h1 className="font-Lexend text-[25px] lg:text-[50px] text-center">15K+</h1>
@@ -91,8 +114,8 @@ export const Home = () => {
                 </div>
             </section>
             {/* Section 3 */}
-            <section className="w-full rounded-[40px] overflow-hidden bg-gray-800 h-[700px] mt-[30px] mb-[30px]">
-                <img src={learningPageImg} alt="" className="w-full h-full object-cover" />
+            <section className="w-full rounded-[40px] llg:rounded-[80px] overflow-hidden bg-gray-800 h-[700px] mt-[30px] mb-[30px]">
+                <img src={learningPageImg} alt="" className="w-full h-full object-cover lg:object-cover" />
             </section>
             {/* Section 4 */}
             <section className="w-full h-auto py-[40px] px-[20px] flex justify-center items-center mb-[40px]">
@@ -262,27 +285,7 @@ export const Home = () => {
 
             </section>
             {/* Footer */}
-            <footer className="w-full h-[500px] bg-[#252641] relative">
-                <div className="w-full h-[50%] flex justify-center items-center gap-x-[30px]">
-                    <div className="w-[80px] h-[80px]">
-                        <img src={group111} alt="" className="w-full h-full "/>
-                    </div>
-                    <hr className="w-[1px] h-[80px] bg-gray-400"/>
-                    <div className="w-[80px]">
-                        <h1 className="font-Poppins text-white font-semibold">Virtual Class for Zoom</h1>
-                    </div>
-                </div>
-                <div className="w-full flex h-[30%] flex-col md:flex-row items-center justify-center gap-y-[20px] md:gap-y-0 gap-x-[50px] font-Poppins">
-                    <h1 className="text-[#B2B3CF]">Careers</h1>
-                    <hr className="w-[1px] hidden md:block h-[20px] bg-[#B2B3CF]"/>
-                    <h1 className="text-[#B2B3CF]">Privacy Policy</h1>
-                    <hr className="w-[1px] hidden md:block h-[20px] bg-[#B2B3CF]"/>
-                    <h1 className="text-[#B2B3CF]">Terms & Conditions</h1>
-                </div>
-                <div className="m-auto flex justify-center items-center absolute bottom-[10px] transformXCenter">
-                    <h1 className="text-[#B2B3CF] font-Poppins text-[17px]">@2025 K-Hub</h1>
-                </div>
-            </footer>
+            <Footer/>
         </div>
     )
 }
