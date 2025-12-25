@@ -15,8 +15,9 @@ import nc from '../../assets/image/Navisworks logo 1.png'
 import { RxDashboard } from "react-icons/rx";
 import { FaRegClock } from "react-icons/fa6";
 import s3 from '../../assets/image/Rectangle 33.png'
-import { Footer } from "../Footer";
+import { Footer } from "../footers/Footer";
 import {Link } from 'react-router-dom'
+import { ClientFooter } from "../footers/ClientFooter";
 
 
 export const Course = () => {
@@ -370,7 +371,7 @@ export const Course = () => {
                 </div>
             </section>
             {/* Footer */}
-            <Footer/>
+            <ClientFooter/>
         </div>
     )
 }

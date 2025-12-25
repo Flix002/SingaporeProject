@@ -44,3 +44,20 @@
 .forInstroctors {
     background:url(../src/assets/image/Rectangle\ 19.png)
 }
+
+.cNavTag:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0px;
+    height: 2px;
+    background: black;
+    z-index: 1;
+}
+
+.cNavTag:hover::before {
+    width: 100%;
+    transition: all ;
+    transition-duration: 0.1s;
+}

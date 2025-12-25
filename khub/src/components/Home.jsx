@@ -14,18 +14,18 @@ import group122 from '../assets/image/Group 122.png'
 import group92 from '../assets/image/Group 92.png'
 import group124 from '../assets/image/Group 124.png'
 import group106 from '../assets/image/Group 106.png'
-import { Footer } from "./Footer";
+import { Footer } from "./footers/Footer";
 
 export const Home = () => {
     return (
         <div className="w-full 2xl:w-[1920px] relative overflow-hidden">
             <section className="min-h-screen w-full relative">
-                <div className="min-h-screen w-full bg-[#0f172a] relative">
-                    {/* Blue Radial Glow Background */}
+                <div className="min-h-screen w-full relative">
+                    {/* Radial Gradient Background from Bottom */}
                     <div
                         className="absolute inset-0 z-0"
                         style={{
-                            backgroundImage: `radial-gradient(circle 600px at 50% 50%, rgba(59,130,246,0.3), transparent)`,
+                            background: "radial-gradient(125% 125% at 50% 90%, #fff 40%, #475569 100%)",
                         }}
                     />
                     {/* Your Content/Components */}
@@ -33,21 +33,20 @@ export const Home = () => {
                         <ClientNav />
                         <div className="w-full h-full m-auto flex justify-center items-center px-[30px] mt-[250px] lg:mt-[180px]">
                             <div>
-                                <h1 className="font-Lexend font-bold text-[40px] text-gray-200 lg:text-[50px] tracking-[2px] text-center">Course Anytime, Any Where</h1>
+                                <h1 className="font-Lexend font-bold text-[40px] text-gray-700 lg:text-[50px] tracking-[2px] text-center">Course Anytime, Any Where.</h1>
+                                <p className="text-center mt-[20px] font-Lexend text-[20px] md:text-[25px]">Start a new journey to improve Your skills with us.</p>
                                 <div className="flex gap-x-[20px] lg:gap-x-[40px] items-center m-auto justify-center mt-[50px]">
-                                    <div className="lg:w-[200px] lg:h-[60px] w-[150px] h-[50px] text-[15px] lg:text-[20px] rounded-[20px] bg-black text-white hover:bg-gray-500 transition-all rounded-[40px] flex justify-center items-center cursor-pointer active:bg-red-500">
-                                        <h1 className="font-Lexend select-none">Find Courses</h1>
+                                    <div className="lg:w-[200px] lg:h-[60px] w-[150px] h-[50px] text-[15px] lg:text-[20px] rounded-[20px] bg-black text-white transition-all rounded-[40px] flex justify-center items-center cursor-pointer active:bg-red-500">
+                                        <h1 className="font-Lexend select-none">Explore</h1>
                                     </div>
-                                    <div className="lg:w-[200px] lg:h-[60px] w-[150px] h-[50px] text-[15px] lg:text-[20px] rounded-[20px] bg-gray-500 hover:bg-gray-500 hover:text-white transition-all rounded-[40px] flex justify-center items-center cursor-pointer active:bg-red-500">
-                                        <h1 className="font-Lexend select-none">Learn More</h1>
+                                    <div className="lg:w-[200px] lg:h-[60px] w-[150px] h-[50px] text-[15px] lg:text-[20px] rounded-[20px] bg-gray-500 hover:text-white transition-all rounded-[40px] flex justify-center items-center cursor-pointer active:bg-red-500">
+                                        <h1 className="font-Lexend select-none text-white">About Us</h1>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
             </section>
             <div className="w-full h-auto lg:h-[130px] px-[10px] lg:px-[20px]">
                 <div className="w-full h-full flex lg:flex-row justify-between px-[20px] lg:justify-center items-start gap-x-[10px] lg:gap-x-[90px]">
@@ -285,7 +284,7 @@ export const Home = () => {
 
             </section>
             {/* Footer */}
-            <Footer/>
+            <Footer />
         </div>
     )
 }

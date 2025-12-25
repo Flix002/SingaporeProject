@@ -11,7 +11,8 @@ import { RxDashboard } from "react-icons/rx";
 import { FaRegClock } from "react-icons/fa6";
 import retangle4 from '../../assets/image/Rectangle 34.png'
 import retangle5 from '../../assets/image/Rectangle 42.png'
-import { Footer } from "../Footer";
+import { Footer } from "../footers/Footer";
+import { ClientFooter } from "../footers/ClientFooter";
 
 
 const Blog = () => {
@@ -248,7 +249,7 @@ const Blog = () => {
                 </div>
             </section>
             {/* Footer */}
-            <Footer/>
+            <ClientFooter/>
         </div>
     )
 }

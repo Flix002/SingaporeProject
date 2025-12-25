@@ -7,7 +7,7 @@ import { RxDashboard } from "react-icons/rx";
 import { FaRegClock } from "react-icons/fa6";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import { Footer } from "../../Footer";
+import { Footer } from "../../footers/Footer";
 
 
 export const AutoCAD = () => {
