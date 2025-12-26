@@ -27,9 +27,9 @@ export const Course = () => {
                 <ClientNav />
             </div>
             {/* Course Section 1 */}
-            <section className="lg:px-[50px] px-[20px] py-[70px] bg-[#9DCCFF]/40 w-full">
+            <section className="lg:px-[50px] px-[20px] py-[70px] bg-linear-to-b from-[#283342] to-[#47566a] w-full">
                 <div className="w-full flex justify-between items-start lg:items-center mb-[50px]">
-                    <h1 className="font-Poppins font-semibold text-black text-[14px] sm:text-[26px] w-[70%]">Welcome back, ready for your next lesson?</h1>
+                    <h1 className="font-Poppins font-semibold text-white text-[14px] sm:text-[26px] w-[70%]">Welcome back, ready for your next lesson?</h1>
                     <h1 className="text-[#49BBBD] font-Poppins text-[13px] lg:text-[17px] font-semibold text-[#49BBBD">View History</h1>
                 </div>
                 <div className="w-full h-auto overflow-hidden">
@@ -143,8 +143,8 @@ export const Course = () => {
                 </div>
             </section>
             {/* Section 2 */}
-            <section className="w-full lg:px-[50px] px-[20px] py-[70px] bg-white">
-                <h1 className="font-Poppins text-black font-semibold text-[20px] lg:text-[30px] mb-[60px]">Choice favourite course from top category</h1>
+            <section className="w-full lg:px-[50px] px-[20px] py-[70px] bg-linear-to-b from-[#666f7b] to-[#919dac]">
+                <h1 className="font-Poppins text-white font-semibold text-[20px] lg:text-[30px] mb-[60px]">Choice favourite course from top category</h1>
                 <div className="w-full h-auto justify-between gap-[30px] flex flex-wrap justify-evenly mb-[30px]">
                     <Link to='/Course/AutoCAD' className="w-[300px] hover:shadow-[2px_2px_20px_gray] transition-all duration-150 h-[350px] px-[20px] py-[20px] bg-white shadow-[0px_0.8px_10px_#eaeaea] rounded-2xl cursor-pointer">
                         <div className="m-auto w-[100px] overflow-hidden">
@@ -205,9 +205,9 @@ export const Course = () => {
                 </div>
             </section>
             {/* Course Section 3 */}
-            <section className="w-full lg:px-[50px] px-[20px] py-[70px] bg-[#9DCCFF]/50">
+            <section className="w-full lg:px-[50px] px-[20px] py-[70px] bg-linear-to-b from-[#283342] to-[#47566a]">
                 <div className="w-full flex justify-between items-start lg:items-center mb-[50px]">
-                    <h1 className="font-Poppins font-semibold text-black text-[14px] sm:text-[26px] w-[70%]">Recommendend Courses</h1>
+                    <h1 className="font-Poppins font-semibold text-white text-[14px] sm:text-[26px] w-[70%]">Recommendend Courses</h1>
                     <h1 className="text-[#49BBBD] font-Poppins text-[13px] lg:text-[17px] font-semibold text-[#49BBBD">See all</h1>
                 </div>
                 <div className="w-full overflow-hidden">

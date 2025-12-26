@@ -22,11 +22,11 @@ const Blog = () => {
                 <ClientNav />
             </div>
             {/* Blog Section 1 */}
-            <section className="w-full h-auto py-[80px] gap-y-[70px] lg:h-[600px] bg-[#9DCCFF]/40 flex flex-col lg:flex-row lg:justify-evenly justify-between items-center">
+            <section className="w-full h-auto py-[80px] gap-y-[70px] lg:h-[600px] bg-linear-to-b from-[#283342] to-[#47566a] flex flex-col lg:flex-row lg:justify-evenly justify-between items-center">
                 <div className="w-full lg:w-[45%] h-auto px-[20px] lg:px-0">
-                    <p className="font-Poppins text-black text-[20px] mb-[25px] text-center lg:text-start">By Themadbrains in <span className="text-[#49BBBD] font-semibold font-Poppins">inspiration</span></p>
-                    <h1 className="text-[#2F327D] mb-[30px] font-Poppins font-bold lg:text-[44px] text-[30px] text-center lg:text-start">Why TAKUMI UI Should Be on the Radar of Every Mobile Developer</h1>
-                    <p className="font-Poppins text-[#696984] tracking-[2px] leading-[30px] text-center lg:text-start mb-[30px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempos Lorem ipsum dolor sitamet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                    <p className="font-Poppins text-white text-[20px] mb-[25px] text-center lg:text-start">By Themadbrains in <span className="text-[#49BBBD] font-bold font-Poppins">inspiration</span></p>
+                    <h1 className="text-[#dfe0ff] mb-[30px] font-Poppins font-bold lg:text-[44px] text-[30px] text-center lg:text-start">Why TAKUMI UI Should Be on the Radar of Every Mobile Developer</h1>
+                    <p className="font-Poppins text-[#b4b4b4] tracking-[2px] leading-[30px] text-center lg:text-start mb-[30px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempos Lorem ipsum dolor sitamet, consectetur adipiscing elit, sed do eiusmod tempor</p>
                     <div className="w-full h-auto flex justify-center items-center lg:justify-start">
                         <div className="w-[200px] h-[60px] flex justify-center items-center bg-[#49BBBD] rounded-[20px] cursor-pointer hover:bg-black transition-all duration-250">
                             <h1 className="font-Poppins text-white font-medium text-[15px] select-none">start learning now</h1>
@@ -40,9 +40,9 @@ const Blog = () => {
                 </div>
             </section>
             {/* Blog Section 2 */}
-            <section className="w-full h-auto bg-[#9DCCFF]/40 px-[20px] lg:px-[90px] py-[80px]">
+            <section className="w-full h-auto bg-linear-to-b from-[#47566a] to-[#283342] px-[20px] lg:px-[90px] py-[80px]">
                 <div className="flex justify-between items-center w-full h-auto mb-[50px]">
-                    <h1 className="font-Poppins text-black text-[25px] font-semibold">Free Course</h1>
+                    <h1 className="font-Poppins text-white text-[25px] font-semibold">Free Course</h1>
                     <h1 className="font-Poppins font-semibold text-[20px] text-[#49BBBD] cursor-pointer">See all</h1>
                 </div>
                 <div className="w-full h-auto flex items-center overflow-hidden">
@@ -95,9 +95,9 @@ const Blog = () => {
                 </div>
             </section>
             {/* Blog Section 3 */}
-            <section className="w-full h-auto bg-[#9DCCFF]/40 px-[20px] lg:px-[90px] pt-[80px] pb-[130px]">
+            <section className="w-full h-auto bg-linear-to-b from-[#283342] to-[#47566a] px-[20px] lg:px-[90px] pt-[80px] pb-[130px]">
                 <div className="flex justify-between items-start lg:items-center w-full h-auto mb-[50px]">
-                    <h1 className="font-Poppins text-black text-[20px] w-[200px] lg:text-[25px] font-semibold">Recommended Courses for you</h1>
+                    <h1 className="font-Poppins text-white text-[20px] w-[200px] lg:w-full lg:text-[25px] font-semibold">Recommended Courses for you</h1>
                     <h1 className="font-Poppins font-semibold text-[20px] text-[#49BBBD] cursor-pointer">See all</h1>
                 </div>
                 <div className="w-full overflow-hidden">

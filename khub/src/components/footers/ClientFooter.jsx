@@ -17,7 +17,7 @@ export const ClientFooter = () => {
                 <div>
                     <h1 className="font-semibold text-[#B2B3CF] text-center tracking-[2px]">Subscribe to get our Newsletter</h1>
                     <form className="flex gap-x-[20px] items-center text-center mt-[20px]">
-                        <input type="email" className="text-[18px] px-[30px] text-black border-[0.3px] w-[300px] h-[55px] border-[#83839A] rounded-[30px]" placeholder="Your Email"/>
+                        <input type="email" className="text-[18px] text-white px-[30px] text-black border-[0.3px] w-[300px] h-[55px] border-[#83839A] rounded-[30px]" placeholder="Your Email"/>
                         <button className="font-semibold text-white w-[180px] h-[55px] bg-[#49BBBD] rounded-[30px] cursor-pointer">Subscribe</button>
                     </form>
                 </div>
